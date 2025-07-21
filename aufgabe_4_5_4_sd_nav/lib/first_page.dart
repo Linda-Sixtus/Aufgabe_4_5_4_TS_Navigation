@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
-  static NavigationDestination pageDestination = 
-    NavigationDestination(icon: Icon(Icons.star), label: "News");
+  static NavigationDestination pageDestination = NavigationDestination(
+    icon: Icon(Icons.star),
+    label: "News",
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +16,22 @@ class FirstScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text("First Page"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.star),
-          ElevatedButton(
-            child: Text("News"),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondScreen()),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(Icons.star),
+            ElevatedButton(
+              child: Text("News"),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SecondScreen()),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
-

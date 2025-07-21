@@ -27,10 +27,13 @@ class _AppHomeState extends State<AppHome> {
     ThirdScreen.pageDestination,
   ];
 
-// Alternative
+  // Alternative
   List<NavigationDestination> pageDestinations2 = [
     NavigationDestination(icon: Icon(Icons.star), label: "News"),
-    NavigationDestination(icon: Icon(Icons.heart_broken_rounded), label: "Likes"),
+    NavigationDestination(
+      icon: Icon(Icons.heart_broken_rounded),
+      label: "Likes",
+    ),
     NavigationDestination(icon: Icon(Icons.person), label: "Profil"),
   ];
 
@@ -40,8 +43,7 @@ class _AppHomeState extends State<AppHome> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
+          backgroundColor: Theme.of(context).colorScheme.secondary,
         ),
         body: IndexedStack(index: currentIndex, children: screens),
         bottomNavigationBar: NavigationBar(
